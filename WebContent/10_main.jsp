@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${name} 
-	${gender}
-	${season}
+<%=request.getParameter("name") %>님 안녕하세요!<br>
+저희 홈페이지에 방문해주셔서 감사합니다.
 	
 </body>
 </html>

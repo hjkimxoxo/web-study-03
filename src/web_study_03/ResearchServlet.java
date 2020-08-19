@@ -40,8 +40,7 @@ public class ResearchServlet extends HttpServlet {
 		}else {
 			gender ="여자";
 		}
-		request.setAttribute("name", name);
-		request.setAttribute("gender", gender);
+		
 		
 		String seasonArr[] = request.getParameterValues("season");
 		String season = "";
@@ -60,9 +59,13 @@ public class ResearchServlet extends HttpServlet {
 			}
 		}
 		
+		request.setAttribute("name", name);
+		request.setAttribute("gender", gender);
 		request.setAttribute("season", season);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ResearchResult.jsp");
-        dispatcher.forward(request, response);
+		
+		  RequestDispatcher dispatcher = request.getRequestDispatcher("ResearchResult.jsp"); 
+		  dispatcher.forward(request, response);
+		 //response.sendRedirect("ResearchResult.jsp?name="+name+"&gender"+gender+"&season"+season);
 	}
 }
